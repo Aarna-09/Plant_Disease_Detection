@@ -1,43 +1,34 @@
-{% extends 'base.html' %}
-{% block pagetitle %}
-Supplement Market
-{% endblock pagetitle %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market - Supplements</title>
+</head>
+<body>
+    <h1>Market - Supplements for Plant Diseases</h1>
 
-{% block body %}
+    <h2>Available Supplements</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Supplement Name</th>
+                <th>Supplement Image</th>
+                <th>Disease Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for image, name, disease in zip(supplement image, supplement name, disease_name) %}
+            <tr>
+                <td>{{ name }}</td>
+                <td><img src="{{ image }}" alt="{{ name }}" width="100"></td>
+                <td>{{ disease }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-<br>
-<div class="row mb-5 text-center text-white">
-    <div class="col-lg-10 mx-auto">
-        <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>🛒Supplements🛒</b></h1>
-        <p class="lead" style="font-weight: 500;color: black;">Buy Supplements & Fertilizer at one place</p>
-    </div>
-</div>
-<div class="row p-3">
-    {% for index in range(0,supplement_name | length) %}
-    {% if index != 4 %}
-    <div class="col">
-        <div class=" p-5 bg-white shadow rounded-lg" style="height: 95%;">
-        <center>
-            {% if index==3 or index==5 or index==7 or index==11 or index==15 or index==18 or index==20 or
-            index==23 or
-            index==24 or index==25 or index==28 or index==38 %}
-            <h5>Fertilizer<b style="color: green;"> (Healthy):</b></h5>
-            {% else %}
-            <h5>Supplements<b style="color: red;"> (Diseased):</b></h5>
-            {% endif %}
-            <br>
-            <img src={{supplement_image[index]}} width="200" height="250">
-            <br>
-            <br>
-            <h6>For {{disease[index]}}</h6>
-            <p>{{supplement_name[index]}}</p>
-
-            <a target="_blank" href={{buy[index]}}><button type="button" class="btn btn-success"
-                    style="background-color: #05380b;">Buy Product</button></a>
-        </center>
-    </div>
-</div>
-{% endif %}
-{% endfor %}
-</div>
-{% endblock body %}
+    <br><br>
+    <a href="/">Go back to the homepage</a>
+</body>
+</html>
