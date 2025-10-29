@@ -1,34 +1,16 @@
 Flask==3.0.3
-gunicorn==23.0.0
-
-# -------------------------------
-# Machine Learning & Data Science
-# -------------------------------
-numpy==1.26.4
+gunicorn==22.0.0
 pandas==2.2.3
-scikit-learn==1.5.2
-joblib==1.4.2
+numpy==1.26.4
+Pillow==11.0.0
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==3.0.2
+Werkzeug==3.0.4
+typing-extensions==4.12.2
 
-# -------------------------------
-# PyTorch (CPU version for Render)
-# -------------------------------
+# PyTorch CPU-only builds (works on Render)
 torch==2.5.1+cpu
 torchvision==0.20.1+cpu
 torchaudio==2.5.1+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
-
-# -------------------------------
-# Utilities
-# -------------------------------
-matplotlib==3.9.2
-seaborn==0.13.2
-requests==2.32.3
-tqdm==4.66.5
-
-# -------------------------------
-# For Flask Templates or API Calls
-# -------------------------------
-jinja2==3.1.4
-itsdangerous==2.2.0
-Werkzeug==3.0.4
-
